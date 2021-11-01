@@ -1,0 +1,55 @@
+:root {
+    --top: 50%;
+    --left: 50%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #7209b7;
+}
+
+.ball {
+    width: 100px;
+    height: 100px;
+    background: #f72585;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    box-shadow: 0 0 30px -10px lightblue, inset 0 0 15px 2px #4361ee, inset 0 0 15px 1px #bdb2ff;
+}
+
+.ball::after {
+    position: absolute;
+    display: inline-block;
+    content: '';
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    border-radius: 50%;
+    background: white;
+    box-shadow: inset 0 0 10px 7px #ff4d6d;
+}
+
+.ball::before {
+    position: absolute;
+    display: inline-block;
+    content: '';
+    width: 20px;
+    height: 20px;
+    top: var(--top);
+    left: var(--left);
+    transform: translateX(-50%) translateY(-50%);
+    border-radius: 50%;
+    background: #000;
+    box-shadow: 0 0 12px 3px #b5179e;
+    z-index: 2;
+}
